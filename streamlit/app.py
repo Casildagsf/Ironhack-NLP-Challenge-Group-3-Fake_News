@@ -88,23 +88,49 @@ with left:
 
     st.subheader("📝 News Article")
 
+###############################################################
+# EXAMPLE ARTICLES
+###############################################################
+
     if "article" not in st.session_state:
         st.session_state.article = ""
 
-    selected = st.selectbox(
-        "Example Articles",
-        list(examples.keys()),
-        key="example_selector"
-    )
+    st.write("### 📚 Example Articles")
 
-    if st.button("📄 Load Example"):
-        st.session_state.article = examples[selected]
+    col1, col2 = st.columns(2)
+
+    # -------- Real examples -------- #
+
+    if col1.button("📰 Real Example 1", use_container_width=True):
+        st.session_state.article = examples["Real News #1"]
+        st.rerun()
+
+    if col2.button("📰 Real Example 2", use_container_width=True):
+        st.session_state.article = examples["Real News #2"]
+        st.rerun()
+
+    # -------- Fake examples -------- #
+
+    col3, col4 = st.columns(2)
+
+    if col3.button("🚨 Fake Example 1", use_container_width=True):
+        st.session_state.article = examples["Fake News #1"]
+        st.rerun()
+
+    if col4.button("🚨 Fake Example 2", use_container_width=True):
+        st.session_state.article = examples["Fake News #2"]
+        st.rerun()
+
+    ###############################################################
+    # TEXT AREA
+    ###############################################################
 
     news = st.text_area(
         "Paste or edit a news article",
         key="article",
         height=350
     )
+
 
     col1, col2 = st.columns(2)
 
