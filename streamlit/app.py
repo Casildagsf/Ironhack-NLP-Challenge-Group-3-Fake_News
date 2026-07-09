@@ -68,6 +68,12 @@ TF-IDF features.
 """
 )
 
+st.markdown(
+"""
+by Antonio Traquinas & Casilda Finat
+"""
+)
+
 st.divider()
 
 ###############################################################
