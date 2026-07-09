@@ -82,7 +82,7 @@ left, right = st.columns([2,1])
 
 with left:
 
-    st.subheader("📝 News Article")
+    #st.subheader("📝 News Article")
 
 ###############################################################
 # EXAMPLE ARTICLES
@@ -91,7 +91,7 @@ with left:
     if "article" not in st.session_state:
         st.session_state.article = ""
 
-    st.markdown("### 📚 Try an Example")
+    st.markdown("### 📝 Try News Examples :")
 
     st.markdown("#### 🟢 Real Articles")
 
