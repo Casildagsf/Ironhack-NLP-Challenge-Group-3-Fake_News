@@ -91,29 +91,29 @@ with left:
     if "article" not in st.session_state:
         st.session_state.article = ""
 
-    st.write("### 📚 Example Articles")
+    st.markdown("### 📚 Try an Example")
 
-    col1, col2 = st.columns(2)
+    st.markdown("#### 🟢 Real Articles")
 
-    # -------- Real examples -------- #
+    c1, c2 = st.columns(2)
 
-    if col1.button("📰 Real Example 1", use_container_width=True):
+    if c1.button("Reuters Economy", use_container_width=True):
         st.session_state.article = examples["Real News #1"]
         st.rerun()
 
-    if col2.button("📰 Real Example 2", use_container_width=True):
+    if c2.button("NASA Satellite", use_container_width=True):
         st.session_state.article = examples["Real News #2"]
         st.rerun()
 
-    # -------- Fake examples -------- #
+    st.markdown("#### 🔴 Fake Articles")
 
-    col3, col4 = st.columns(2)
+    c3, c4 = st.columns(2)
 
-    if col3.button("🚨 Fake Example 1", use_container_width=True):
+    if c3.button("Alien Invasion", use_container_width=True):
         st.session_state.article = examples["Fake News #1"]
         st.rerun()
 
-    if col4.button("🚨 Fake Example 2", use_container_width=True):
+    if c4.button("Magic Lemon Cure", use_container_width=True):
         st.session_state.article = examples["Fake News #2"]
         st.rerun()
 
