@@ -44,7 +44,7 @@ A user-friendly **Streamlit web application** was also developed, allowing users
 <table>
   <td><img src="/images/deploy_streamlit_02_pred_260710.jpg" height="420" alt="Horse prediction"></td>
   <td> &nbsp &nbsp </td>
-  <td><img src="/images/deploy_streamlit_02_pred_260710.jpg" height="420" alt="Dookie prediction"></td>
+  <td><img src="/images/deploy_streamlit_03_pred_260710.jpg" height="420" alt="Dookie prediction"></td>
 </table>
 </center>
 
@@ -261,13 +261,10 @@ project/
 
 # Future Improvements
 
-* Fine-tune transformer models (BERT, RoBERTa, DistilBERT)
-* Add explainability using SHAP or LIME
-* Improve confidence estimation
+* Fine-tune other faster transformer models (DistilBERT)
 * Train on larger and more recent datasets
 * Support multilingual fake news detection
 * Add source credibility analysis
-* Deploy with Docker and CI/CD pipeline
 
 ---
 
