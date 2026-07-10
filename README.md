@@ -1,5 +1,7 @@
 # 📰 Fake News Detection using NLP and Linear SVM
 
+<br>
+
 ## About
 
 This project applies **Natural Language Processing (NLP)** and **Machine Learning** to automatically classify news articles as **Real** or **Fake**. The solution uses text preprocessing, TF-IDF vectorization, and a Linear Support Vector Machine (SVM) classifier to achieve high classification performance.
@@ -11,6 +13,8 @@ A user-friendly **Streamlit web application** was also developed, allowing users
 <p align="center">
 <img src="/images/ToyStory-3758131314.jpg" height="420" alt="Horse prediction">
 </p>
+
+<br>
 
 ---
 
@@ -44,10 +48,12 @@ A user-friendly **Streamlit web application** was also developed, allowing users
 <table>
   <td><img src="/images/deploy_streamlit_02_pred_260710.jpg" height="420" alt="Horse prediction"></td>
   <td> &nbsp &nbsp </td>
-  <td><img src="/images/deploy_streamlit_02_pred_260710.jpg" height="420" alt="Dookie prediction"></td>
+  <td><img src="/images/deploy_streamlit_03_pred_260710.jpg" height="420" alt="Dookie prediction"></td>
 </table>
 </center>
 
+
+<br>
 
 
 ---
@@ -58,9 +64,17 @@ A user-friendly **Streamlit web application** was also developed, allowing users
 
 [https://project2-nlp-fakenews.streamlit.app](https://project2-nlp-fakenews.streamlit.app)
 
+
+<br>
+
+
 ---
 
 # Problem Statement
+
+<p align="center">
+<img src="/images/bbc_fake_news.jpg" height="420" alt="BBC">
+</p>
 
 The rapid spread of misinformation through online news and social media makes it increasingly difficult to distinguish reliable information from fake news.
 
@@ -71,6 +85,10 @@ The objective of this project is to build a machine learning model capable of au
 
 using only the article text.
 
+<br>
+
+
+
 ---
 
 # Dataset
@@ -80,6 +98,13 @@ using only the article text.
 * File: `dataset/data.csv`
 * Text-based binary classification dataset
 
+<br>
+
+<p align="center">
+<img src="/images/ITDonkeySocks.jpg" height="220" alt="Donkey Socks">
+</p>
+
+<br>
 
 ---
 
@@ -109,6 +134,10 @@ Prediction
 Real / Fake
 ```
 
+
+<br>
+
+
 ### Text Preprocessing
 
 * Lowercase conversion
@@ -116,6 +145,10 @@ Real / Fake
 * Remove numbers
 * Remove stop words
 * Lemmatization
+
+
+<br>
+
 
 ### Feature Engineering
 
@@ -133,6 +166,10 @@ The final deployed model was saved using **Joblib** together with the trained TF
 
 ---
 
+
+<br>
+
+
 # Results
 
 The final model achieved strong performance on both validation and test datasets.
@@ -143,27 +180,40 @@ Evaluation metrics include:
 * Precision
 * Recall
 * F1-score
-* Confusion Matrix
 
-Example evaluation:
-
-```
-Accuracy: (generated in notebook)
-
-Classification Report
-
-Precision
-Recall
-F1-score
-
-Confusion Matrix
-```
+<p align="center">
+<img src="/images/test_accuracy_lsvm_ngtfidf_20260710.jpg" height="420" alt="test_accuracy_lsvm_ngtfidf">
+</p>
 
 The notebook also evaluates the model on unseen validation data and exports predictions to:
 
 ```
 dataset/validation_predictions.csv
 ```
+
+<br>
+
+---
+
+## MODEL_AT_5 - Transfer Learning: Fine-tuned BERT (bert-base-uncased)
+
+
+<p align="center">
+<img src="/images/BERT_encoder.jpg" height="420" alt="BERT_encoder">
+</p>
+
+We also tested with Transfer Learning - Transformers Model BERT, arriving at **100% accuracy** in Test.
+- Unlike TF-IDF (a fixed, non-trainable transform computed once), during trainer.train() the entire 110M-parameter BERT body is updated by backpropagation too, not just the classification head.
+- So "feature extraction" and "training" aren't separate stages anymore — the model is simultaneously learning what features matter for fake-news detection and adjusting its language understanding to your specific dataset.
+- That's the core meaning of transfer learning here: you start from features learned on a massive general-text pretraining corpus, then adapt them to this task.
+
+<p align="center">
+<img src="/images/train_accuracy_finetune_bert_20260710.jpg" height="420" alt="train_accuracy_finetune_bert">
+<img src="/images/test_accuracy_finetune_bert_20260710.jpg" height="420" alt="test_accuracy_finetune_bert">
+</p>
+
+
+<br>
 
 ---
 
@@ -215,7 +265,12 @@ Run the Streamlit application
 streamlit run app.py
 ```
 
+
+<br>
+
+
 ---
+
 
 # Project Structure
 
@@ -244,6 +299,8 @@ project/
     └── memes
 ```
 
+<br>
+
 ---
 
 # Tech Stack
@@ -257,17 +314,18 @@ project/
 * Streamlit
 * Jupyter Notebook
 
+<br>
+
 ---
 
 # Future Improvements
 
-* Fine-tune transformer models (BERT, RoBERTa, DistilBERT)
-* Add explainability using SHAP or LIME
-* Improve confidence estimation
+* Fine-tune other faster transformer models (DistilBERT)
 * Train on larger and more recent datasets
 * Support multilingual fake news detection
 * Add source credibility analysis
-* Deploy with Docker and CI/CD pipeline
+
+<br>
 
 ---
 
@@ -275,14 +333,27 @@ project/
 
 **Antonio Traquinas** - https://github.com/wtraquinas/
 
-and 
+&
 
 **Casilda Finat** - https://github.com/Casildagsf/
 
-AI Engineering | Machine Learning | NLP
+<br>
 
 ---
 
+<p align="center">
+<img src="/images/fakenews_fallout.jpg" height="220" alt="fakenews_fallout">
+</p>
+
+
+<br>
+
+
 ## Acknowledgements
 
+Special thanks to the indefatigable **Luis Junco**, always ready to clear any doubt with seemingly infinite patience.
+
 This project was developed as part of the **IronHack AI Engineering Bootcamp**, demonstrating the complete machine learning workflow from data preprocessing to deployment of an interactive web application.
+
+<br>
+
